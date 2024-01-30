@@ -757,11 +757,11 @@ ZicoSeq.plot <- function(ZicoSeq.obj, pvalue.type = c('p.adj.fdr','p.raw','p.adj
 		title.name = paste0('Association between ', grp.name, ' and  taxa abundance')
 	}
 	
-	if(!is.numeric(meta.dat[,grp.name]) & length(unique(meta.dat[,grp.name])) > 2){
+	if(!is.numeric(meta.dat[,grp.name]) & length(unique(meta.dat[,grp.name, drop = TRUE])) > 2){
 		title.name = paste0('Association between ', grp.name, ' and  taxa abundance')
 	}
 	
-	if(!is.numeric(meta.dat[,grp.name]) & length(unique(meta.dat[,grp.name])) == 2){
+	if(!is.numeric(meta.dat[,grp.name]) & length(unique(meta.dat[,grp.name, drop = TRUE])) == 2){
 		title.name = paste0('Differential abundance between ', paste0(base, ' (reference) and ', level2))
 	}
 	
